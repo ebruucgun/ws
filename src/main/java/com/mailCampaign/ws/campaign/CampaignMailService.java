@@ -10,12 +10,10 @@ import java.util.Properties;
 @Service
 public class CampaignMailService {
 
-    private MailRepository mailRepository;
 
     private SentCampaignInfoService sentCampaignInfoService;
 
-    public CampaignMailService(MailRepository mailRepository, SentCampaignInfoService sentCampaignInfoService){
-        this.mailRepository = mailRepository;
+    public CampaignMailService(SentCampaignInfoService sentCampaignInfoService){
         this.sentCampaignInfoService = sentCampaignInfoService;
     }
 
@@ -26,7 +24,7 @@ public class CampaignMailService {
         // Getting system properties
         Properties props = System.getProperties();
 
-        // Setting up mail server
+        // Setting up mail serve
         props.put("mail.smtp.auth", true);
         props.put("mail.smtp.starttls.enable", true);
         props.put("mail.smtp.host", "smtp.gmail.com");

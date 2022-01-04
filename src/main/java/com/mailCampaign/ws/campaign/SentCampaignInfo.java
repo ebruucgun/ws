@@ -1,9 +1,7 @@
 package com.mailCampaign.ws.campaign;
 
-import com.mailCampaign.ws.contact.Contact;
 import lombok.Data;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,7 +27,7 @@ public class SentCampaignInfo {
 
     private String url;
 
-    private Date timeToClick;
+    private Long timeToClick;
 
     private String uniqueCode;
 

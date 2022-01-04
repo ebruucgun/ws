@@ -12,7 +12,7 @@ public class SentCampaignInfoController {
     @Autowired
     private SentCampaignInfoService service;
 
-    @GetMapping("/getallsentcampaigns")
+    @GetMapping("api/1.0/getallsentcampaigns")
     public List<SentCampaignInfo> findAll() {
         return service.findAll();
     }

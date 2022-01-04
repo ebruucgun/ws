@@ -1,6 +1,7 @@
 package com.mailCampaign.ws.campaign;
 
 import com.mailCampaign.ws.contact.Contact;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +10,9 @@ import java.util.List;
 
 @Service
 public class SentCampaignInfoService {
+
+    @Value("${campaignlink}")
+    private String link;
 
     private SentCampaignInfoRepository repo;
 
@@ -33,7 +37,7 @@ public class SentCampaignInfoService {
             newItem.setUniqueCode(uniqueCode);
 
             newItem.setToSentTime(new Date(System.currentTimeMillis()));
-            newItem.setUrl("http://localhost:8080/campaignlink/" + uniqueCode);
+            newItem.setUrl(link + uniqueCode);
 
             infoList.add(newItem);
         }

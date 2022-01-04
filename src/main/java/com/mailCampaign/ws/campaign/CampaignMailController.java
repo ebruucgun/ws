@@ -14,7 +14,7 @@ public class CampaignMailController {
     @Autowired
     private SentCampaignInfoService sentCampaignInfoService;
 
-    @PostMapping("/sendmail")
+    @PostMapping("api/1.0/sendmail")
     public void createMail(@RequestBody CampaignMail mail){
         campaignMailService.sendMail(mail);
     }
@@ -26,7 +26,7 @@ public class CampaignMailController {
         SentCampaignInfo info = sentCampaignInfoService.findByUniqueCode(hash);
         Long currentMillis = System.currentTimeMillis();
         Long timeToClick = currentMillis - info.getToSentTime().getTime();
-        info.setTimeToClick(new Date(timeToClick));
+        info.setTimeToClick(timeToClick);
         info.setTimeToReceive(new Date(currentMillis));
         sentCampaignInfoService.update(info);
     }

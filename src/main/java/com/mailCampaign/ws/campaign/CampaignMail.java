@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
-@Entity
 public class CampaignMail {
 
     @Id
