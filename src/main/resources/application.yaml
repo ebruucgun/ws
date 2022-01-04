@@ -9,4 +9,4 @@ spring:
     hibernate:
       ddl-auto: update
 
-campaignlink: "http://localhost:8080/campaignlink/"
+campaignlink: "https://mailcampaignn.herokuapp.com/campaignlink/"
