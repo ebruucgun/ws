@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 
 @RestController
+@CrossOrigin
 public class CampaignMailController {
 
     @Autowired
